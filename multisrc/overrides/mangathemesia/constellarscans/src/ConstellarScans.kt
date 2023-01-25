@@ -225,7 +225,7 @@ class ConstellarScans : MangaThemesia("Constellar Scans", "https://constellarsca
         val NOT_DIGIT_RE = Regex("""\D""")
         val JS_FUNC_RE = Regex("""function (.+?)\s*\(""")
 
-        val TS_DATA_RE = Regex("""\(['"]([\da-z]+?)['"]\)""", RegexOption.IGNORE_CASE)
+        val TS_DATA_RE = Regex("""\(\s*['"]([\da-z]+?)['"]\s*\)""", RegexOption.IGNORE_CASE)
 
         // The decoding algorithm looks for a hex number in 32..33, so we write our regex accordingly
         val DESCRAMBLING_KEY_RE =
