@@ -113,7 +113,7 @@ class ConstellarScans : MangaThemesia("Constellar Scans", "https://constellarsca
         }
         val tsDataObject = json.parseToJsonElement(tsData).jsonObject
         return tsDataObject["sources"]!!.jsonArray[0].jsonObject["images"]!!.jsonArray.mapIndexed { index, jsonElement ->
-            Page(index, imageUrl = jsonElement.jsonPrimitive.content)
+            Page(index, imageUrl = jsonElement.jsonPrimitive.content.replace("http://", "https://"))
         }
     }
 
